@@ -36,7 +36,7 @@
 
     <script type="module">
 
-        //create payment 
+        //create payments with a fixed ammount 
         const resp = await fetch(
             `https://payment-api.khipu.com/v3/payments`,
             {
@@ -48,7 +48,7 @@
                 body: JSON.stringify({
                     amount: 5000,
                     currency: 'CLP',
-                    subject: 'Cobro de prueba'
+                    subject: 'Cobro de prueba - Monto Fijo $5000 CLP'
                 })
             }
         );
