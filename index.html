@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Ada">
-    <meta name="description" content="Pedro Pablo Store">
-<title>Pedro Pablo Store</title>
-<link rel="icon" href="html5.png" type="image/x-icon">
+    <meta name="description" content=" Crear Pago 5000 CLP usando Khipu">
+<title>Testing Khipu API con un Pago Fijo en CLP</title>
 <link rel="stylesheet" href="main.css" type="text/css">
 <script src="https://js.khipu.com/v1/kws.js"></script>
 
+<!--Consulta Medios de Pago Disponibles -->
 <script language="JavaScript" type="module">
     const id = '498906';
     const respuesta = await fetch(
@@ -23,55 +23,19 @@
 
     const dataPM = await respuesta.text();
     console.log(dataPM);
+
 </script>
 
 </head>
 
 <body>
-    <h1>Hello Khipu World!</h1>
-    <h2>Testing Khipu REST API</h2>
-    <p>Open Finance & Open Banking Payments Company</p>
-    <p>It has been a while since i havent done coding... More or less 20 years</p>
-
-    <hr> <!-- horizontal rule does not need clossing tag - -->
+    <h2> Khipu REST API - Basic Test</h2>
+    <p>Fixed payment ammount = $5000 CLP</p>
       
 <div id="khipu-web-root">
 
     <script type="module">
 
-        /*descriptor de pago
-           const resp = await fetch(`https://api.khipu.com/v1/descriptor/payment`,
-               {
-                   method: 'POST',
-                   headers: {
-                       'Content-Type': 'application/json',
-                       'x-api-key': '73f7f7da-9a1f-4989-83bc-cb32b039d05d'
-       
-                   },
-                   body: JSON.stringify
-                       (
-                           {
-                               bank: "Bofa",
-                               params:
-                               {
-                                   "subject": "Prueba Descriptor de Pago en Khipu",
-                                   "ammount": "5000",
-                                   "currency_code": "CLP",
-                                   "payer_email": "test1@gmail.com",
-                                   "payer_name": "OlgaTest1",
-                                   "target_account_bank": "DemoBank",
-                                   "target_account_alias": "CC1",
-                                   "target_account_name": "Pedro Pablo",
-                                   "target_account_number": "0000000000000546271",
-                                   "target_account_personal_identifier": "4.905.113-1"
-                               }
-                           }
-                       )
-               }
-           );
-           const data = await resp.json();
-           console.log(data);
-       */
         //create payment 
         const resp = await fetch(
             `https://payment-api.khipu.com/v3/payments`,
@@ -94,7 +58,7 @@
 
 
 
-
+        //Using Khipu - Kenshin
         const callback = (result) => {
             console.log(`calback invoked:`, result);
         };
@@ -119,12 +83,12 @@
         khipu.startOperation(dataPago.payment_id, callback, options);
 
     </script>
-
-    <hr> <!-- horizontal rule does not need clossing tag - -->
+ 
 </div>
 
-       
-       &lt;&lt;&lt; &copy; Ada 2025 &gt;&gt;&gt;  
+   <p>Please Note: It has been a while since i havent done coding... XX years</p>
+    <hr>
+         &lt;&lt;&lt; &copy; Ada 2025 &gt;&gt;&gt;  
 </body>
 
 </html>
